@@ -5,18 +5,12 @@
 ## An Optimized Decision Tree-Based Framework for Explainable IoT Anomaly Detection
 
 <p>
-  <strong>
-    A machine-learning research framework for detecting anomalous behavior in Internet of Things (IoT) network traffic using an optimized Decision Tree model and explainable artificial intelligence techniques.
-  </strong>
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/Model-Decision%20Tree-6F42C1" alt="Decision Tree"/>
-  <img src="https://img.shields.io/badge/Domain-IoT%20Security-0EA5E9" alt="IoT Security"/>
-  <img src="https://img.shields.io/badge/XAI-Explainable%20AI-F59E0B" alt="Explainable AI"/>
-  <img src="https://img.shields.io/badge/Data-WUSTL%20EHMS%202020-22C55E" alt="WUSTL EHMS 2020"/>
-  <img src="https://img.shields.io/badge/Status-Research%20Code-22C55E" alt="Research Code"/>
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Model-Decision%20Tree-6F42C1" alt="Decision Tree" />
+  <img src="https://img.shields.io/badge/Domain-IoT%20Security-0EA5E9" alt="IoT Security" />
+  <img src="https://img.shields.io/badge/XAI-Explainable%20AI-F59E0B" alt="Explainable AI" />
+  <img src="https://img.shields.io/badge/Dataset-WUSTL%20EHMS%202020-22C55E" alt="WUSTL EHMS 2020" />
+  <img src="https://img.shields.io/badge/Status-Research%20Code-34D399" alt="Research Code" />
 </p>
 
 <p>
@@ -28,47 +22,51 @@
 
 </div>
 
+---
+
 ## 👥 Contributors
 
 - Ashikuzzaman
 
-## 🌟 Overview
+## ✨ Overview
 
-IoT devices continuously generate network traffic and system-level data. Because these devices are often deployed in security-sensitive environments, identifying abnormal or malicious behavior is an important cybersecurity task.
+IoT devices continuously generate network traffic and system-level data. In security-sensitive environments, even a small abnormal pattern may indicate malware, botnet activity, compromise, or operational faults. Detecting these anomalies early is essential for protecting connected systems.
 
-This project presents an explainable machine-learning workflow for IoT anomaly detection. It uses the **WUSTL-EHMS-2020** dataset with attack-category information and applies an optimized **Decision Tree-based classification framework** to distinguish normal traffic from anomalous traffic.
+This repository presents an explainable machine-learning workflow for IoT anomaly detection. It uses the WUSTL-EHMS-2020 dataset and an optimized Decision Tree model to classify network behaviors and highlight the most influential features behind each prediction.
 
-The primary objective is not only to detect anomalies, but also to make the model's decisions easier to understand. Explainable AI methods can help identify the features that contribute most to a prediction and support more transparent security analysis.
+The project aims to go beyond simple detection by supporting interpretability. In real-world security systems, understanding why a sample is flagged as anomalous is often as important as the prediction itself.
 
-## ✨ Highlights
+---
 
 <table>
-<tr>
-<td width="50%">
+  <tr>
+    <td width="50%">
 
-### 🧠 Machine Learning
+### 🧠 Core ML Capabilities
 
 - Decision Tree-based anomaly classification
-- Data preprocessing and cleaning
-- Feature and target preparation
-- Training and testing workflow
-- Model evaluation using classification metrics
-- Suitable for structured IoT network data
+- Data cleaning and preprocessing
+- Feature and label preparation
+- Train/test splitting workflow
+- Model evaluation with standard metrics
+- Structured IoT network data support
 
-</td>
-<td width="50%">
+    </td>
+    <td width="50%">
 
-### 🔍 Explainable AI
+### 🔍 Explainable AI Focus
 
 - Feature-importance analysis
-- Interpretation of anomaly predictions
-- More transparent security decisions
-- Easier investigation of attack-related traffic
-- Supports research-focused model analysis
+- Transparent anomaly reasoning
+- Better interpretation of security alerts
+- Improved investigation of abnormal patterns
+- Research-oriented model understanding
 
-</td>
-</tr>
+    </td>
+  </tr>
 </table>
+
+---
 
 ## 🧩 Project Workflow
 
@@ -85,47 +83,55 @@ flowchart LR
     I --> J[Feature Importance and Interpretation]
 ```
 
+---
+
 ## 📊 Dataset
 
-The project uses the following dataset:
+The project uses the following research dataset:
 
-- **Dataset:** WUSTL-EHMS-2020 with attack categories
-- **File:** `wustl-ehms-2020_with_attacks_categories.csv`
-- **Data type:** Structured IoT/network traffic data
-- **Purpose:** IoT anomaly and attack-category detection
+- Dataset: WUSTL-EHMS-2020 with attack categories
+- File: `wustl-ehms-2020_with_attacks_categories.csv`
+- Data type: Structured IoT / network traffic data
+- Purpose: IoT anomaly detection and attack-category analysis
 
-The dataset is included in this repository for reproducibility. Please review the original dataset documentation and licensing terms before using it in other projects or redistributing it.
+> Please review the original dataset documentation and licensing terms before redistributing or using the data in other projects.
+
+---
 
 ## 🧠 Model Description
 
-The project is based on an optimized Decision Tree approach. Decision Trees are useful for tabular cybersecurity data because they can learn nonlinear decision boundaries while producing rules that are comparatively easy to interpret.
+The framework is based on an optimized Decision Tree classifier. Decision Trees are especially useful for tabular cybersecurity data because they can model nonlinear decision boundaries while preserving interpretability.
 
-The framework includes the following stages:
+The workflow includes the following stages:
 
 1. Load the IoT traffic dataset.
 2. Inspect the dataset and identify relevant variables.
 3. Prepare features and target labels.
-4. Apply preprocessing required for model training.
+4. Apply preprocessing needed for model training.
 5. Train the Decision Tree classifier.
-6. Generate normal/anomalous predictions.
-7. Evaluate the model using standard classification metrics.
-8. Analyze feature importance to explain the predictions.
+6. Generate anomaly predictions.
+7. Evaluate performance using standard metrics.
+8. Analyze feature importance to explain outputs.
 
-## 🔍 Explainable AI
+---
 
-Explainability is an important part of this project. Instead of treating the detector as a black box, the workflow investigates which input features influence the model's decisions.
+## 🔎 Explainable AI
 
-The explainability analysis can be used to:
+Explainability is a central part of this project. Instead of treating the detector as a black box, the workflow identifies which input features contribute most to the model's decisions.
 
-- Rank the most influential traffic features.
-- Understand why a sample is classified as anomalous.
-- Inspect the relationship between important features and attack categories.
-- Support security analysts during anomaly investigation.
-- Improve trust and transparency in machine-learning-based detection.
+This can help:
 
-## 📈 Evaluation
+- Rank the most relevant traffic features
+- Understand why a sample is classified as anomalous
+- Interpret relationships between important features and attack categories
+- Support security analysts during investigation
+- Improve trust and transparency in model-based detection
 
-The notebook is designed to evaluate the classifier using commonly used classification metrics, including:
+---
+
+## 📈 Evaluation Metrics
+
+The notebook is designed to assess the classifier using widely used classification metrics, including:
 
 - Accuracy
 - Precision
@@ -135,7 +141,9 @@ The notebook is designed to evaluate the classifier using commonly used classifi
 - Classification report
 - Feature importance
 
-For security applications, precision and recall should be considered together with accuracy because an imbalanced dataset may make accuracy alone misleading.
+For security applications, precision and recall should be interpreted alongside accuracy, since class imbalance can make raw accuracy misleading.
+
+---
 
 ## 📁 Repository Structure
 
@@ -155,8 +163,12 @@ IoT-XAI-Anomaly-Detection/
 ├── wustl-ehms-2020_with_attacks_categories.csv
 │   └── WUSTL-EHMS-2020 IoT traffic dataset with attack categories
 │
-└── README.md
+├── README.md
+│
+└── .gitignore (if present)
 ```
+
+---
 
 ## 🚀 Quick Start
 
@@ -173,19 +185,21 @@ cd IoT-XAI-Anomaly-Detection
 python -m venv .venv
 ```
 
-Activate the environment on Linux/macOS:
+Activate it:
+
+- Linux/macOS:
 
 ```bash
 source .venv/bin/activate
 ```
 
-Activate the environment on Windows:
+- Windows:
 
 ```powershell
 .venv\Scripts\activate
 ```
 
-### 3. Install the required packages
+### 3. Install required packages
 
 ```bash
 pip install numpy pandas scikit-learn matplotlib seaborn jupyter
@@ -199,7 +213,7 @@ jupyter notebook "wustl_data_iot_(2).ipynb"
 
 ### 5. Run the workflow
 
-Recommended execution order:
+Recommended flow:
 
 ```text
 Load Dataset
@@ -217,6 +231,8 @@ Evaluate Anomaly Detection Performance
 Analyze Feature Importance
 ```
 
+---
+
 ## 🛠️ Technologies
 
 - Python
@@ -226,46 +242,64 @@ Analyze Feature Importance
 - Scikit-learn
 - Matplotlib
 - Seaborn
-- Explainable AI techniques for model interpretation
+- Explainable AI techniques
+
+---
 
 ## 🎯 Research Goals
 
-This project focuses on the following goals:
+This project focuses on the following objectives:
 
-- Build a practical anomaly-detection pipeline for IoT traffic.
-- Use an interpretable Decision Tree model for structured data.
-- Identify important features associated with anomalous behavior.
-- Evaluate the model using multiple performance metrics.
-- Make IoT security predictions more understandable and trustworthy.
+- Build a practical anomaly-detection workflow for IoT traffic
+- Use an interpretable Decision Tree model for structured data
+- Identify features associated with anomalous behavior
+- Evaluate performance using multiple metrics
+- Make IoT security predictions more transparent and trustworthy
+
+---
 
 ## ⚠️ Limitations
 
-- This repository is primarily notebook-based.
-- Results may depend on preprocessing choices, train/test splitting, and hyperparameter settings.
-- Dataset performance may not directly represent real-world deployment performance.
-- Further validation on external IoT datasets is recommended.
-- Explainability results should be interpreted as model behavior, not as definitive causal evidence.
+- The repository is primarily notebook-based.
+- Results may depend on preprocessing choices, train/test splits, and hyperparameters.
+- Dataset performance may not generalize directly to all real-world deployment scenarios.
+- Additional validation on external IoT datasets is recommended.
+- Explainability results represent model behavior, not definitive causal proof.
+
+---
 
 ## 🔮 Future Improvements
 
-Potential future extensions include:
+Possible extensions include:
 
-- Comparing Decision Tree performance with Random Forest, XGBoost, and LightGBM.
-- Adding SHAP and LIME explanations.
-- Performing cross-validation and systematic hyperparameter tuning.
-- Handling class imbalance with suitable sampling strategies.
-- Adding real-time IoT traffic inference.
-- Building a lightweight monitoring dashboard.
-- Evaluating robustness against changing attack patterns.
+- Comparing Decision Tree performance with Random Forest, XGBoost, and LightGBM
+- Adding SHAP and LIME explanations
+- Conducting cross-validation and systematic hyperparameter tuning
+- Handling class imbalance with suitable sampling strategies
+- Supporting real-time IoT traffic inference
+- Building a lightweight monitoring dashboard
+- Evaluating robustness against evolving attack patterns
+
+---
 
 ## 📜 Citation
 
-If you use this project in academic or research work, please cite the repository and the original WUSTL-EHMS-2020 dataset source.
+If you use this project in academic or research work, please cite both the repository and the original WUSTL-EHMS-2020 dataset source.
+
+---
 
 ## 📄 License
 
-No license has currently been specified for this repository. Please contact the repository owner before redistributing or using the code and dataset outside the intended research context.
+No explicit license has been specified for this repository. Please contact the repository owner before redistributing or reusing the code and dataset outside the intended research context.
+
+---
 
 ## 🙏 Acknowledgements
 
-Thanks to the researchers and dataset creators who made the WUSTL-EHMS-2020 IoT security data available for research and experimentation.
+Thanks to the researchers and dataset creators who made the WUSTL-EHMS-2020 IoT security dataset available for research and experimentation.
+
+<div align="center">
+
+<p><i>Built for interpretable and trustworthy IoT anomaly detection.</i></p>
+
+</div>
