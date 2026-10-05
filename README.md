@@ -310,9 +310,7 @@ The model evaluation uses standard classification metrics, including:
 - Confusion matrix
 - Classification report
 
-The complete experimental results and discussion are provided in the published paper:
 
-[Read the Published Paper](./IoT%20Anomaly%20Detection.pdf)
 
 ## Research Paper and Project Relationship
 
