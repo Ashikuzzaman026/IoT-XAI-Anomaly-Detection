@@ -2,131 +2,212 @@
 
 ## About the Project
 
-This repository contains the research artifacts for an explainable machine learning framework designed to detect anomalies in Internet of Things (IoT) network traffic.
+This repository contains the research artifacts for the paper **“An Optimized Decision Tree-Based Framework for Explainable IoT Anomaly Detection.”**
 
-The project investigates how an optimized Decision Tree-based machine learning approach can be used for IoT anomaly detection while maintaining model interpretability. In addition to classifying normal and anomalous traffic, the framework provides feature-level explanations that help identify the characteristics responsible for each prediction.
+The project presents a machine learning-based framework for detecting anomalous activities in Internet of Things (IoT) network traffic using an optimized Decision Tree approach. The framework also focuses on explainability, allowing the model's decisions to be analyzed and interpreted.
 
-Unlike a conventional software application or continuously running detection service, this repository represents a completed research project. It includes the dataset, experiment notebook, and the published research paper associated with the proposed framework.
+This repository includes the dataset, experimental Jupyter Notebook, and the published research paper associated with the project.
 
-## Research Objectives
+## Contributors
 
-The primary objectives of this project are:
+- Ashikuzzaman
+- Md. Shawkat Hossain
+- Jubayer Abdullah Joy
+- Md Zahid Akon
+- Dr. Md Manjur Ahmed
+- Md. Naimul Islam
 
-- To detect anomalous behavior in IoT network traffic.
-- To develop an optimized Decision Tree-based classification framework.
-- To evaluate the model using a publicly available IoT healthcare dataset.
-- To identify the most influential traffic features for anomaly classification.
-- To improve the interpretability of machine learning-based IoT security systems.
-- To provide human-understandable explanations for model predictions.
+## Published Paper
+
+This work was presented at:
+
+**IEEE 2nd International Conference on Computing, Applications and Systems (COMPAS 2025)**
+
+**23–24 October 2025**  
+**Kushtia, Bangladesh**
+
+The published paper is available in this repository:
+
+[IoT Anomaly Detection.pdf](./IoT%20Anomaly%20Detection.pdf)
+
+## Research Overview
+
+The rapid growth of IoT devices has increased the attack surface of connected systems. IoT environments generate diverse and high-dimensional network traffic, making it challenging to detect malicious or abnormal activities accurately.
+
+Traditional intrusion detection systems may provide a prediction without clearly explaining the reason behind that prediction. This project addresses this issue by combining anomaly detection with explainable machine learning.
+
+The proposed framework is designed to:
+
+- Detect anomalous IoT network traffic.
+- Classify different traffic categories.
+- Use an optimized Decision Tree-based model.
+- Improve the interpretability of anomaly detection decisions.
+- Identify important features associated with suspicious behavior.
+- Support security analysis in resource-constrained IoT environments.
 
 ## Key Contributions
 
-The project focuses on the following contributions:
+The main contributions of this research are:
 
-1. **Optimized Decision Tree-Based Detection**
+1. An optimized Decision Tree-based framework for IoT anomaly detection.
 
-   A Decision Tree-based classification approach is developed and optimized for detecting anomalies in IoT network traffic.
+2. A classification approach capable of distinguishing normal traffic from different attack categories.
 
-2. **Explainable IoT Security Analytics**
+3. An explainable machine learning workflow for analyzing model decisions.
 
-   The framework emphasizes interpretability so that the reasons behind individual predictions can be inspected and analyzed.
+4. Feature-level analysis to identify the characteristics that contribute to anomaly predictions.
 
-3. **Feature-Level Analysis**
+5. An experimental evaluation using the WUSTL-EHMS-2020 IoT healthcare network traffic dataset.
 
-   Important network traffic characteristics are examined to understand their contribution to anomaly detection.
-
-4. **Research-Based Evaluation**
-
-   The proposed approach is evaluated using the WUSTL-EHMS-2020 dataset with attack-category information.
-
-5. **Reproducible Experimental Notebook**
-
-   The complete experimental workflow is provided through a Jupyter Notebook, including data loading, preprocessing, model training, evaluation, and explainability analysis.
+6. A reproducible Jupyter Notebook containing the data preprocessing, model training, and evaluation workflow.
 
 ## Dataset
 
-The experiments use the **WUSTL-EHMS-2020** dataset, which contains network traffic collected from an IoT-enabled healthcare environment.
+The project uses the **WUSTL-EHMS-2020** dataset, which contains network traffic collected from an IoT-enabled healthcare environment.
 
-The dataset used in this repository includes attack-category information and is provided in CSV format:
+The dataset used in this repository includes attack-category labels for:
+
+- Normal traffic
+- Spoofing attacks
+- Data Alteration attacks
+
+The dataset file is:
 
 ```text
 wustl-ehms-2020_with_attacks_categories.csv
 ```
 
-The dataset contains network traffic observations associated with normal and anomalous activities. It is used to train and evaluate the proposed anomaly detection model.
+The dataset contains **16,318 records** and **45 columns** before preprocessing. The features include network-flow information, packet statistics, traffic-load information, and healthcare-related sensor attributes.
 
-> Please refer to the original dataset documentation and the accompanying research paper for details about data collection, feature definitions, and attack categories.
+Examples of available features include:
+
+- Source and destination addresses
+- Source and destination ports
+- Source and destination bytes
+- Source and destination load
+- Packet statistics
+- Packet loss and rate
+- Source and destination MAC addresses
+- Temperature
+- SpO2
+- Pulse rate
+- Systolic and diastolic blood pressure
+- Heart rate
+- Respiration rate
+- ST value
+- Attack category
+
+## Attack Categories
+
+The dataset contains the following attack categories:
+
+| Attack Category | Description |
+|----------------|-------------|
+| `normal` | Normal IoT network traffic |
+| `Spoofing` | Traffic associated with spoofing behavior |
+| `Data Alteration` | Traffic associated with data alteration behavior |
+
+The observed class distribution in the dataset is:
+
+| Category | Number of Samples |
+|----------|------------------:|
+| Normal | 14,272 |
+| Spoofing | 1,124 |
+| Data Alteration | 922 |
 
 ## Methodology
 
-The overall experimental workflow follows the steps below:
+The experimental workflow follows the steps below:
 
 ```text
-Dataset
-   │
-   ▼
-Data preprocessing
-   │
-   ▼
-Feature preparation
-   │
-   ▼
-Train-test data splitting
-   │
-   ▼
-Optimized Decision Tree training
-   │
-   ▼
-Anomaly classification
-   │
-   ▼
-Performance evaluation
-   │
-   ▼
-Explainable AI analysis
+IoT Network Traffic Dataset
+            │
+            ▼
+Data Loading and Inspection
+            │
+            ▼
+Feature Cleaning
+            │
+            ▼
+Categorical Feature Encoding
+            │
+            ▼
+Target Label Encoding
+            │
+            ▼
+Train-Test Data Preparation
+            │
+            ▼
+Machine Learning Model Training
+            │
+            ▼
+Performance Evaluation
+            │
+            ▼
+Explainability Analysis
 ```
 
-### 1. Data Preparation
+### Data Preprocessing
 
-The dataset is loaded and prepared for machine learning. The preprocessing stage includes:
+The preprocessing stage includes:
 
-- Loading the IoT network traffic data.
-- Inspecting the dataset structure.
-- Handling the target label.
-- Preparing input features.
-- Separating normal and anomalous samples.
-- Splitting the data into training and testing subsets.
+- Loading the CSV dataset using pandas.
+- Inspecting the data structure and feature types.
+- Removing unnecessary columns.
+- Separating categorical and numerical features.
+- Encoding categorical network features.
+- Encoding attack-category labels.
+- Preparing the dataset for machine learning experiments.
 
-### 2. Model Training
+The notebook removes the following columns from the working dataset:
 
-A Decision Tree-based classifier is trained using the processed IoT network traffic features.
+```text
+Label
+Dir
+Flgs
+```
 
-Decision Trees are particularly suitable for this research because their decision paths can be inspected directly. This makes it possible to understand how different feature conditions contribute to the final classification decision.
+The following categorical features are encoded:
 
-### 3. Model Evaluation
+```text
+SrcAddr
+DstAddr
+Sport
+SrcMac
+DstMac
+```
 
-The trained model is evaluated using standard classification metrics, including:
+The attack category is encoded for model training using label encoding.
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion matrix
-- Classification report
+## Machine Learning Models
 
-The exact experimental results are reported in the published paper included in this repository.
+The notebook imports and supports multiple machine learning algorithms for experimentation, including:
 
-### 4. Explainable AI Analysis
+- Decision Tree
+- Random Forest
+- K-Nearest Neighbors
+- Multi-Layer Perceptron
+- Support Vector Machine
 
-The project includes explainability analysis to investigate why the model classifies a particular traffic sample as normal or anomalous.
+The central focus of the published research is the optimized Decision Tree-based framework.
 
-The explainability component is used to:
+Decision Trees are useful for this research because their decision paths can be inspected and interpreted more easily than many black-box models.
 
-- Identify important features.
-- Analyze feature influence on predictions.
-- Understand model decision patterns.
-- Provide human-readable interpretations of anomaly classifications.
-- Support security analysts in investigating suspicious IoT traffic.
+## Explainable AI Analysis
+
+Explainability is an important component of this project.
+
+The purpose of the explainability analysis is to understand how the model reaches a particular prediction. This is especially important in IoT security, where analysts may need to verify why a traffic sample has been classified as anomalous.
+
+The analysis can help answer questions such as:
+
+- Which features contributed to an anomaly prediction?
+- What traffic characteristics distinguish normal and malicious behavior?
+- Which feature thresholds are used by the Decision Tree?
+- How can the model's decision path be interpreted?
+- Can the prediction be explained to a security analyst?
+
+The explainable analysis improves the transparency and trustworthiness of the anomaly detection process.
 
 ## Repository Contents
 
@@ -142,37 +223,46 @@ The explainability component is used to:
 
 | File | Description |
 |------|-------------|
-| `IoT Anomaly Detection.pdf` | Published research paper describing the proposed IoT anomaly detection framework. |
-| `wustl-ehms-2020_with_attacks_categories.csv` | IoT network traffic dataset with attack-category labels. |
-| `wustl_data_iot_(2).ipynb` | Jupyter Notebook containing data processing, model development, evaluation, and explainability analysis. |
-| `README.md` | Project documentation and reproducibility guide. |
+| `IoT Anomaly Detection.pdf` | Published paper presented at IEEE COMPAS 2025. |
+| `wustl-ehms-2020_with_attacks_categories.csv` | WUSTL-EHMS-2020 IoT network traffic dataset with attack categories. |
+| `wustl_data_iot_(2).ipynb` | Jupyter Notebook containing preprocessing, model development, evaluation, and analysis. |
+| `README.md` | Project documentation and reproducibility instructions. |
 
-## Running the Experiments
+## Requirements
 
-This repository is organized as a notebook-based research project.
+The notebook uses Python-based data science and machine learning libraries.
 
-### Requirements
-
-The experiments can be reproduced using Python and the following commonly used libraries:
+Recommended environment:
 
 ```text
 Python 3.x
 Jupyter Notebook
-pandas
-numpy
-scikit-learn
-matplotlib
-seaborn
 ```
 
-Additional libraries may be required depending on the explainability methods used in the notebook.
+Required packages include:
 
-### Installation
+```bash
+pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn jupyter
+```
 
-Create and activate a Python environment:
+## Running the Notebook
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Ashikuzzaman026/IoT-XAI-Anomaly-Detection.git
+cd IoT-XAI-Anomaly-Detection
+```
+
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv iot-xai-env
+```
+
+For Linux or macOS:
+
+```bash
 source iot-xai-env/bin/activate
 ```
 
@@ -182,139 +272,150 @@ For Windows:
 iot-xai-env\Scripts\activate
 ```
 
-Install the required packages:
+### 3. Install the Dependencies
 
 ```bash
-pip install numpy pandas scikit-learn matplotlib seaborn jupyter
+pip install --upgrade pip
+pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn jupyter
 ```
 
-Start Jupyter Notebook:
+### 4. Start Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-Then open:
+### 5. Open the Notebook
+
+Open the following file:
 
 ```text
 wustl_data_iot_(2).ipynb
 ```
 
-Run the notebook cells sequentially to reproduce the preprocessing, training, evaluation, and explainability workflow.
+Run the notebook cells sequentially to reproduce the data loading, preprocessing, encoding, machine learning, and evaluation workflow.
 
-## Research Paper
+## Experimental Evaluation
 
-The complete research paper is available in this repository:
+The model evaluation uses standard classification metrics, including:
 
-```text
-IoT Anomaly Detection.pdf
-```
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion matrix
+- Classification report
 
-The paper provides detailed information about:
+The complete experimental results and discussion are provided in the published paper:
 
-- The research motivation.
-- IoT anomaly detection challenges.
-- Dataset characteristics.
-- Proposed machine learning framework.
-- Model optimization process.
-- Experimental setup.
-- Evaluation results.
-- Explainable AI analysis.
-- Research findings and limitations.
+[Read the Published Paper](./IoT%20Anomaly%20Detection.pdf)
 
-## Results
+## Research Paper and Project Relationship
 
-The experimental results and visualizations generated during the research process are available in the Jupyter Notebook and are discussed in detail in the published paper.
+The PDF included in this repository contains the published research paper. The Jupyter Notebook and dataset provide the computational materials related to the study.
 
-The results should be interpreted together with the paper because the paper provides the complete experimental context, including:
+The repository is intended to preserve and share:
 
-- Dataset preparation.
-- Evaluation protocol.
-- Model configuration.
-- Performance measurements.
-- Explainability findings.
-- Comparison with relevant approaches.
+- The research paper.
+- The experimental dataset.
+- The data preprocessing workflow.
+- The machine learning implementation.
+- The explainability-related analysis.
+- The supporting research artifacts.
 
-## Explainability and Interpretability
+## Project Status
 
-A major focus of this project is not only detecting anomalies but also understanding the model's decisions.
+This repository contains the completed research materials associated with the published paper.
 
-For an IoT security system, a prediction without an explanation may be difficult to validate or trust. Therefore, the proposed framework analyzes the relationship between the input network features and the model output.
-
-The explainability analysis helps answer questions such as:
-
-- Which features contributed most to an anomaly prediction?
-- What feature values are associated with suspicious behavior?
-- How does the Decision Tree separate normal and anomalous traffic?
-- Can security analysts interpret the model's classification logic?
-- Which traffic characteristics should be investigated further?
-
-## Scope of the Repository
-
-This repository is intended for:
-
-- Academic research.
-- IoT cybersecurity experiments.
-- Explainable machine learning studies.
-- Reproducibility of the published work.
-- Educational use of IoT anomaly detection techniques.
-- Further development of interpretable intrusion detection systems.
-
-The repository is not intended to represent a production-ready, continuously running IoT monitoring service. The provided notebook represents the experimental implementation used for the research study.
+It is not a continuously running production service or real-time IoT monitoring platform. The implementation is provided as a notebook-based research artifact for experimentation, analysis, and reproducibility.
 
 ## Limitations
 
-The current repository has the following limitations:
+The current project has the following limitations:
 
-- The implementation is provided primarily as a research notebook.
-- The framework is evaluated using a specific IoT healthcare dataset.
-- Performance may vary on other IoT environments or network configurations.
-- The notebook-based workflow does not provide a real-time deployment interface.
-- Further validation may be required before applying the model in operational security environments.
-- Dataset quality and label distribution may affect the final model performance.
+- The experiments are based on a specific IoT healthcare dataset.
+- The implementation is primarily notebook-based.
+- The framework has not been packaged as a real-time deployment service.
+- Performance may vary on other IoT datasets and network environments.
+- Additional validation may be required before production use.
+- The class distribution may influence model performance.
 
-## Reproducibility
+## Future Work
 
-To reproduce the experiments:
+Possible future extensions include:
 
-1. Clone or download this repository.
-2. Install the required Python dependencies.
-3. Keep the dataset file in the repository directory.
-4. Open `wustl_data_iot_(2).ipynb`.
-5. Run the notebook cells in sequence.
-6. Review the generated metrics, visualizations, and explainability outputs.
-7. Compare the reproduced results with the results reported in the research paper.
+- Real-time IoT traffic monitoring.
+- Deployment on edge and resource-constrained devices.
+- Integration with live network traffic streams.
+- Evaluation on additional IoT datasets.
+- Comparison with deep learning and ensemble approaches.
+- Improved explainability visualization.
+- Automated alert generation for security analysts.
+- Development of a web-based monitoring interface.
 
 ## Citation
 
-If you use this repository, dataset preparation, methodology, or research findings in your work, please cite the associated publication available in:
-
-```text
-IoT Anomaly Detection.pdf
-```
-
-A complete BibTeX citation can be added here based on the final publication information:
+If you use this project, dataset preparation, methodology, or research findings, please cite the associated publication included in this repository.
 
 ```bibtex
-@article{
-  iot_xai_anomaly_detection,
+@inproceedings{ashikuzzaman2025iot,
   title     = {An Optimized Decision Tree-Based Framework for Explainable IoT Anomaly Detection},
-  author    = {Author Names},
-  journal   = {Journal or Conference Name},
-  year      = {Publication Year}
+  author    = {
+    Ashikuzzaman and
+    Md. Shawkat Hossain and
+    Jubayer Abdullah Joy and
+    Md Zahid Akon and
+    Dr. Md Manjur Ahmed and
+    Md. Naimul Islam
+  },
+  booktitle = {IEEE 2nd International Conference on Computing, Applications and Systems},
+  year      = {2025},
+  address   = {Kushtia, Bangladesh}
 }
 ```
 
 ## Acknowledgment
 
-This work is based on the WUSTL-EHMS-2020 IoT network traffic dataset and builds upon research in IoT security, machine learning-based anomaly detection, and explainable artificial intelligence.
+The authors acknowledge the use of the WUSTL-EHMS-2020 dataset for conducting the IoT anomaly detection experiments.
 
 ## License
 
-No separate open-source license has been specified for this repository yet. Please contact the repository owner before redistributing the code, dataset, or research materials.
+No separate open-source license has been specified for this repository. Please contact the repository owner before redistributing or reusing the research materials.
 
-## Author
+## Authors and Affiliations
 
-**Ashikuzzaman026**
+### Ashikuzzaman
 
-GitHub: [Ashikuzzaman026](https://github.com/Ashikuzzaman026)
+Department of Computer Science and Engineering  
+University of Barishal  
+Barishal, Bangladesh
+
+### Md. Shawkat Hossain
+
+Department of Computer Science and Engineering  
+University of Barishal  
+Barishal, Bangladesh
+
+### Jubayer Abdullah Joy
+
+Department of Computer Science and Engineering  
+University of Barishal  
+Barishal, Bangladesh
+
+### Md Zahid Akon
+
+Department of Computer Science and Engineering  
+University of Global Village  
+Barishal, Bangladesh
+
+### Dr. Md Manjur Ahmed
+
+Department of Computer Science and Engineering  
+University of Barishal  
+Barishal, Bangladesh
+
+### Md. Naimul Islam
+
+Department of Computer Science and Engineering  
+University of Barishal  
+Barishal, Bangladesh
