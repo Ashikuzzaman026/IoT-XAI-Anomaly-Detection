@@ -17,18 +17,22 @@ This repository includes the dataset, experimental Jupyter Notebook, and the pub
 - Dr. Md Manjur Ahmed
 - Md. Naimul Islam
 
-## Published Paper
+## Research Publication
 
-This work was presented at:
+The project is associated with the following research publication:
 
-**IEEE 2nd International Conference on Computing, Applications and Systems (COMPAS 2025)**
+> **An Optimized Decision Tree-Based Framework for Explainable IoT Anomaly Detection**
 
-**23–24 October 2025**  
-**Kushtia, Bangladesh**
+**Authors:** Ashikuzzaman, Md Shawkat Hossain, Jubayer Abdullah Joy, Md Zahid Akon, Md Manjur Ahmed, Md Naimul Islam
 
-The published paper is available in this repository:
+**Conference:** 2025 IEEE 2nd International Conference on Computing, Applications and Systems (COMPAS)
 
-[IoT Anomaly Detection.pdf](./IoT%20Anomaly%20Detection.pdf)
+
+
+**Publisher:** IEEE
+
+**IEEE Xplore:**  
+[https://ieeexplore.ieee.org/document/11502458](https://doi.org/10.1109/COMPAS67506.2025.11381766)
 
 ## Research Overview
 
@@ -358,19 +362,19 @@ Possible future extensions include:
 If you use this project, dataset preparation, methodology, or research findings, please cite the associated publication included in this repository.
 
 ```bibtex
-@inproceedings{ashikuzzaman2025iot,
+@inproceedings{Ashikuzzaman2025IoTAnomaly,
+  author    = {Ashikuzzaman and
+               Hossain, Md. Shawkat and
+               Joy, Jubayer Abdullah and
+               Akon, Md. Zahid and
+               Ahmed, Md. Manjur and
+               Islam, Md. Naimul},
   title     = {An Optimized Decision Tree-Based Framework for Explainable IoT Anomaly Detection},
-  author    = {
-    Ashikuzzaman and
-    Md. Shawkat Hossain and
-    Jubayer Abdullah Joy and
-    Md Zahid Akon and
-    Dr. Md Manjur Ahmed and
-    Md. Naimul Islam
-  },
-  booktitle = {IEEE 2nd International Conference on Computing, Applications and Systems},
+  booktitle = {2025 IEEE 2nd International Conference on Computing, Applications and Systems (COMPAS)},
+  pages     = {1--7},
   year      = {2025},
-  address   = {Kushtia, Bangladesh}
+  publisher = {IEEE},
+  doi       = {10.1109/COMPAS67506.2025.11381766}
 }
 ```
 
@@ -382,40 +386,3 @@ The authors acknowledge the use of the WUSTL-EHMS-2020 dataset for conducting th
 
 No separate open-source license has been specified for this repository. Please contact the repository owner before redistributing or reusing the research materials.
 
-## Authors and Affiliations
-
-### Ashikuzzaman
-
-Department of Computer Science and Engineering  
-University of Barishal  
-Barishal, Bangladesh
-
-### Md. Shawkat Hossain
-
-Department of Computer Science and Engineering  
-University of Barishal  
-Barishal, Bangladesh
-
-### Jubayer Abdullah Joy
-
-Department of Computer Science and Engineering  
-University of Barishal  
-Barishal, Bangladesh
-
-### Md Zahid Akon
-
-Department of Computer Science and Engineering  
-University of Global Village  
-Barishal, Bangladesh
-
-### Dr. Md Manjur Ahmed
-
-Department of Computer Science and Engineering  
-University of Barishal  
-Barishal, Bangladesh
-
-### Md. Naimul Islam
-
-Department of Computer Science and Engineering  
-University of Barishal  
-Barishal, Bangladesh
